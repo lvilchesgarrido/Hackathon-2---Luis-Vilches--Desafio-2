@@ -1,0 +1,9 @@
+import pandas as pd
+
+# Cargar los archivos Excel en dataframes
+indicadores_df = pd.read_excel('Indicadores_operacionales_n.xlsx')
+costos_df = pd.read_excel('serie_costos_n.xlsx')
+
+# Mostrar las primeras filas de ambos dataframes
+print(indicadores_df.head())
+print(costos_df.head())
