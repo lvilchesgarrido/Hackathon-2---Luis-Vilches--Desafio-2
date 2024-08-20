@@ -10,18 +10,18 @@ El desarrollo de este proyecto no fue lineal, sino que siguió una metodología 
 
 Esta carpeta contiene la información original proporcionada por Minera Centinela, sin modificaciones.
 
-## 1. Ordenamiento de Bases de Datos
+## 0. Ordenamiento de Bases de Datos
 
 Inicialmente, se analizaron los archivos Excel de cada base de datos para comprender su estructura. Se concluyó que la estructura original no era adecuada para su procesamiento en DataFrames de pandas. Por lo tanto, se decidió transponer las matrices. En el caso de los costos, tras un análisis de variabilidad, se determinó que no había claridad en la clasificación de costos fijos o variables. Por esta razón, se eliminó esta clasificación y los costos se agruparon por subproceso. Esta es la data que se utilizó a lo largo del desafío.
 
-## 2. Análisis de Costos
+## 1. Análisis de Costos
 
 Se empleó el método del coeficiente de variación para analizar los costos, lo que resultó en la clasificación de los costos en tres categorías:
 - **Costos Fijos:** 1982
 - **Costos Variables:** 1266
 - **Sin Registros:** 378
 
-## 3. Análisis de Bases de Datos de Indicadores
+## 2. Análisis de Bases de Datos de Indicadores
 
 Para analizar las bases de datos de indicadores, se presentaron dos opciones:
 1. Analizar las bases por separado y predecir costos de un subproceso basado en una única base seleccionada arbitrariamente.
@@ -33,7 +33,7 @@ Se seleccionó el coeficiente de correlación de **Spearman**, considerando las 
 
 Se realizaron pruebas con varios modelos de machine learning para determinar cuál sería el más adecuado. Sin embargo, los resultados iniciales no fueron concluyentes, por lo que se decidió seguir un enfoque por etapas. Se determinó que modelos computacionalmente más complejos, como los basados en PyTorch o Keras, no aportaban a la solución. Finalmente, se optó por una lista de modelos más simples (ver sección 3.2).
 
-### 3.2 Entrenamiento de Modelos
+### 3.2 Entrenamiento de Modelos -Pruebas Finales
 
 Se procedió a entrenar los modelos seleccionados utilizando datos hasta diciembre de 2021, para luego predecir los costos de todo el año 2022 y comparar los resultados. Aunque se logró un avance respecto a los modelos previos, los resultados no fueron concluyentes. Posteriormente, se probó un ensamblado con un **Voting Regressor**, que arrojó mejores resultados. Por lo tanto, este es el modelo propuesto como solución final.
 
